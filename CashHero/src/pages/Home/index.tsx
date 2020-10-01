@@ -14,12 +14,16 @@ const Home: React.FunctionComponent = () => {
         navigation.navigate('Login');
     }
 
+    function handleToCreateAccount(){
+        navigation.navigate('CreateAccount');
+    }
+
     return (
         <View style={styles.container}>
             <Image source={logo} style={styles.logo}/>
             <View style={styles.grid_buttons}>
                 <ButtonDefault caption='Entrar' isDark={true} onPress={handleToLogin}/>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleToCreateAccount}>
                     <Text style={styles.link}>Criar conta</Text>
                 </TouchableOpacity>
             </View>

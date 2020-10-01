@@ -13,7 +13,8 @@ export default StyleSheet.create({
     },
     caption_dark: {
         color: colors.grey_light,
-        fontSize: fonts.general
+        fontSize: fonts.general,
+        fontFamily: 'Poppins-Bold'
     },
     container: {
         width: 150,
@@ -22,8 +23,10 @@ export default StyleSheet.create({
         borderRadius: 5,
         borderWidth: 1,
         borderColor: colors.grey_heavy,
+        display: 'flex',
+        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'space-evenly'
     },
     caption: {
         color: colors.grey_heavy,

@@ -11,6 +11,7 @@ interface iProps extends TouchableOpacityProps {
 const ButtonDefault: React.FunctionComponent<iProps> = (props) => {
     return (
         <TouchableOpacity style={ props.isDark ? styles.container_dark : styles.container } onPress={props.onPress} >
+            {props.children}
             <Text style={ props.isDark ? styles.caption_dark : styles.caption }>
                 {props.caption}
             </Text>
