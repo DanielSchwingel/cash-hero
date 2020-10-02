@@ -7,8 +7,10 @@ export default StyleSheet.create({
         height: 43,
         backgroundColor: colors.grey_heavy,
         borderRadius: 5,
+        display: 'flex',
+        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly'
 
     },
     caption_dark: {

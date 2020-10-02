@@ -4,21 +4,21 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/mobile';
 import * as Yup from 'yup';
+import { useNavigation } from '@react-navigation/native';
 
 import InputText from '../../components/Form/InputText';
 import ButtonDefault from '../../components/Button';
 
 import styles from './styles';
-import { color } from 'react-native-reanimated';
-import { colors } from '../../assets/styles';
-import { TextInput } from 'react-native-gesture-handler';
 const logo = require('../../assets/images/logo.png');
+import { colors } from '../../assets/styles';
 
 const Login: React.FunctionComponent = () => {
+    let navigation = useNavigation();
     const formRef = useRef<FormHandles>(null);
 
-
     async function handleSubmit(data: FormData){
+        navigation.navigate('Dashboard')
 		try {
 			const schema = Yup.object().shape({
 				phone: Yup.string().required('Campo obrigatório'),
