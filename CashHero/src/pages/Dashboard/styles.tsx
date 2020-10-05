@@ -27,5 +27,14 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+    },
+    grid_graphic: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+    }, 
+    graphic: {
+        height: 250,
+        width: 70,
     }
 })

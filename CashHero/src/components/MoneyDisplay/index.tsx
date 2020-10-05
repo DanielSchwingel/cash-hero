@@ -15,10 +15,21 @@ const MoneyDisplay: React.FunctionComponent<iProps> = (props) => {
             <Text style={styles.info}>
                 {props.info}
             </Text>
-            {}
-            <Text style={styles.currency_green}>
-                {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(props.value)}
-            </Text>
+            {props.color === 'green' &&
+                <Text style={styles.currency_green}>
+                    {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(props.value)}
+                </Text>
+            }
+            {props.color === 'red' &&
+                <Text style={styles.currency_red}>
+                    {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(props.value)}
+                </Text>
+            }
+            {props.color === 'grey' &&
+                <Text style={styles.currency_grey}>
+                    {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(props.value)}
+                </Text>
+            }
         </View>
     )
 };
