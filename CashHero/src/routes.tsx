@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import CreateAccount from './pages/CreateAccount';
 import Dashboard from './pages/Dashboard';
+import Month from './pages/Month';
 
 const AppStack = createStackNavigator();
 
@@ -17,6 +18,7 @@ const Routes: React.FunctionComponent = () => {
                 <AppStack.Screen name="Login" component={Login} />
                 <AppStack.Screen name="CreateAccount" component={CreateAccount} />
                 <AppStack.Screen name="Dashboard" component={Dashboard} />
+                <AppStack.Screen name="Month" component={Month} />
             </AppStack.Navigator>
         </NavigationContainer>
     )
