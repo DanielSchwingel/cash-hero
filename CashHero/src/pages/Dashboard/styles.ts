@@ -5,12 +5,13 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: colors.grey_light,
         padding: 20,
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
     },
     header: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
     },
     info: {
         fontFamily: 'Poppins-Bold',
@@ -23,18 +24,17 @@ export default StyleSheet.create({
         height: 100,
     },
     grid_money: {
+        width: '100%',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
     },
-    grid_graphic: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-    }, 
     graphic: {
         height: 250,
-        width: 70,
+    },
+    align_left:{
+        width: '100%',
+        alignItems: 'flex-start',
     }
 })

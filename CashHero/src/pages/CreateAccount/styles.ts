@@ -5,6 +5,9 @@ import { colors, fonts } from '../../assets/styles';
 export default StyleSheet.create({
     container: {
         flex: 1,
+    },
+    container_child: {
+        flex: 1,
         backgroundColor: colors.grey_light,
         alignItems: 'center',
         justifyContent: 'space-around',
@@ -20,11 +23,5 @@ export default StyleSheet.create({
         color: colors.grey_heavy,
         fontSize: fonts.general,
         marginBottom: 20,
-    },
-    grid_buttons: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        marginTop: 50,
     }
 })
