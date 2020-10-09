@@ -1,49 +1,62 @@
-import React, { useRef } from 'react';
-import { Formik } from 'formik';
-import { View, Text, TextInput, Button } from 'react-native';
-import * as Yup from 'yup';
+import React from 'react';
+import { View, Text, FlatList } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import ButtonDefault from '../../components/Button';
+
+import styles from './styles';
+import { colors } from '../../assets/styles';
 
 const Month: React.FunctionComponent = () => {
-    const user = useRef(null);
-    const password = useRef(null);
-
-    const FormSchema=Yup.object().shape({
-        user: Yup.string().required('Campo obrigatório'),
-        password: Yup.string().required('Campo obrigatório'),
-    });
-
+    const data = [
+        {
+            id: 1,
+            description: 'Salário',
+            value: 150.10,
+            type: 1
+        },
+        {
+            id: 2,
+            description: 'Vale',
+            value: 150.10,
+            type: 1
+        },
+        {
+            id: 3,
+            description: 'Luz',
+            value: 95,
+            type: 0
+        }
+    ]
+    
     return(
-        <Formik
-            initialValues={{
-                user: '',
-                password: '',
-            }}
-            onSubmit={values => {
-                console.log(values);
-            }}
-            validationSchema={FormSchema}
-            validateOnBlur={true}
-        >
-            {({values, handleChange, handleSubmit, errors }) => (
-                <View>
-                    <Text>Usuário</Text>
-                    <TextInput
-                        ref={user}
-                        value={values.user}
-                        onChangeText={handleChange('user')}
-                    />
-                    {errors.user && <Text>{errors.user}</Text>}
-                    <Text>Senha</Text>
-                    <TextInput
-                        ref={password}
-                        value={values.password}
-                        onChangeText={handleChange('password')}
-                    />
-                    {errors.password && <Text>{errors.password}</Text>}
-                    <Button title='Entrar' onPress={handleSubmit}/>
-                </View>
-            )}
-        </Formik>
+        <View style={styles.container}>
+            <Text style={styles.title}> 
+                Histórico do mês
+            </Text>
+            <Text>
+                Movimentações realizadas
+            </Text>
+            <FlatList
+                style={styles.historic}
+                data={data}
+                keyExtractor={item => String(item.id)}
+                renderItem={({item})=> (
+                    <View style={styles.moviment}>
+                        <Text>{item.description}</Text>
+                    </View>
+                )}
+            />
+            <View style={styles.grid_buttons}>
+                <ButtonDefault caption='Nova receita' isDark={false}>
+                    <Icon name='plus' size={24} color={colors.grey_heavy} />
+                </ButtonDefault>
+                <ButtonDefault caption='Nova despesa' isDark={false}>
+                    <Icon name='minus' size={24} color={colors.grey_heavy} />
+                </ButtonDefault>
+
+            </View>
+        </View>
     )
 };
 

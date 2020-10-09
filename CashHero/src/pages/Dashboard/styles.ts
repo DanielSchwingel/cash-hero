@@ -31,7 +31,7 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
     },
     graphic: {
-        height: 250,
+        height: 200,
     },
     align_left:{
         width: '100%',

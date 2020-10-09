@@ -4,6 +4,7 @@ const colors = {
     grey_heavy: '#414143',
     green: '#04D361',
     red: '#E02041',
+    white: '#FFFFFF'
 }
 
 export default colors;
