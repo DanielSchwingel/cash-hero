@@ -23,8 +23,12 @@ export default StyleSheet.create({
     },
     moviment: {
         backgroundColor: colors.white,
-        padding: 5,
-        margin: 5
+        padding: 10,
+        margin: 5,
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
     grid_buttons: {
         display: 'flex',
